@@ -34,7 +34,7 @@ mapImgHeight = mapImg.height
 #
 # ISS Gif file - this is just a pure white square
 #
-issImg = Image.open("iss.gif")  #.convert('RGB')
+issImg = Image.open("iss.gif")
 issImg = issImg.rotate(90)
 issImgWidth = issImg.width
 issImgHeight = issImg.height
@@ -42,7 +42,7 @@ issImgHeight = issImg.height
 #
 # The mask which will turn the white iss gif file into an actual image
 #
-issMaskImg = Image.open("iss_mask.gif") #.convert('RGB')
+issMaskImg = Image.open("iss_mask.gif")
 issMaskImg = issMaskImg.rotate(90)
 
 #
