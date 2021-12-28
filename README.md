@@ -88,4 +88,4 @@ Place all 5 files into the same folder on your pi, and execute:
 
 _python iss.py_
 
-If all is well, you should see your world map image and a very simple image representing the ISS at its current location.
+If all is well, you should see your world map image and a very simple image representing the ISS at its current location.  The location of the ISS image will then update every 5 seconds with its new location.
