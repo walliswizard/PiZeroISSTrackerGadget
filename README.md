@@ -7,7 +7,7 @@ This little gadget makes use of two bits of hardware - although I'm sure similar
 
 I'm in the UK, so in my case I've used:
 
-1. A Display Hat Mini by Raspberry Pi
+1. A Display Hat Mini from Pimoroni.com
 
 https://shop.pimoroni.com/products/display-hat-mini
 
