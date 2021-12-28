@@ -3,7 +3,7 @@ A small "Raspberry Pi Zero" / "Pimoroni Display HAT Mini" based gadget to show w
 
 **Hardware**
 
-This little gadget makes use of two bits of hardware - although I'm sure similar products should work equally well.
+This little gadget makes use of two key bits of hardware - although I'm sure similar products should work equally well.
 
 I'm in the UK, so in my case I've used:
 
@@ -14,6 +14,8 @@ https://shop.pimoroni.com/products/display-hat-mini
 2. A Raspberry Pi Zero 2, in this case with colour-coded headers already soldered on:
 
 https://thepihut.com/products/raspberry-pi-zero-2?variant=41181426942147
+
+additionally you'll need:
 
 3. A micro-SD card with Raspberry OS (Bullseye) Lite installed.  SSH is enabled.
 
