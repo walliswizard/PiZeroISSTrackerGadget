@@ -23,19 +23,37 @@ disp = ST7789.ST7789(
 )
 
 disp.begin()
+
+#
+# World Map image - 320x240
+#
 mapImg = Image.open("map.jpg")
 mapImgWidth = mapImg.width
 mapImgHeight = mapImg.height
+
+#
+# ISS Gif file - this is just a pure white square
+#
 issImg = Image.open("iss.gif")  #.convert('RGB')
 issImg = issImg.rotate(90)
 issImgWidth = issImg.width
 issImgHeight = issImg.height
+
+#
+# The mask which will turn the white iss gif file into an actual image
+#
 issMaskImg = Image.open("iss_mask.gif") #.convert('RGB')
 issMaskImg = issMaskImg.rotate(90)
 
+#
+# Font for text at the bottom
+#
 font = ImageFont.truetype("times-ro.ttf", 18)
 
-#Thanks to Nigel Trewartha for pointing me in the right direction with this algorithm.
+
+#
+# Convert lat/lon into a pixel coordinate on our map, adjusted so that the ISS image will be centred on that pixel
+#
 def calcXY(lat, lon):
     global mapImgWidth, mapImgHeight
     global issImgWidth, issImgHeight
@@ -46,30 +64,46 @@ def calcXY(lat, lon):
 
 
 while True:
-
-    # load the current status of the ISS in real-time
+    #
+    # Load the current status of the ISS in real-time
+    #
     url = "http://api.open-notify.org/iss-now.json"
     response = urllib.request.urlopen(url)
     result = json.loads(response.read())
 
+    #
     # Extract the ISS location
+    #
     location = result["iss_position"]
     lat = float(location['latitude'])
     lon = float(location['longitude'])
 
+    #
+    # Convert the lat/lon into a coordinate where we will draw the ISS gif
+    #
     result = calcXY(lat, lon)
     iss_x = result[0]
     iss_y = result[1]
 
+    #
+    # Create a copy of our world map, paste the iss gif onto it along with a mask.
+    #
     img = mapImg.copy()   
     img.paste(issImg, (iss_x, iss_y), issMaskImg)
 
+    #
+    # Write the location of the ISS at the bottom of the world map
+    #
     draw = ImageDraw.Draw(img)
-
     text = f"Latitude: {lat}, Longitude: {lon}"    
     draw.text((10, 220), text, (170, 170, 170), font=font)
     
+    #
+    # Display the final image
+    #
     disp.display(img)
 
-    # refresh every 5 seconds
+    #
+    # Wait 5 seconds and do it all again
+    #
     time.sleep(5)
