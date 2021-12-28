@@ -2,8 +2,6 @@
 
 import sys
 from PIL import Image, ImageFont, ImageDraw
-#from PIL import ImageFont
-#from PIL import ImageDraw
 import ST7789 as ST7789
 import json
 import urllib.request
@@ -37,6 +35,7 @@ issMaskImg = issMaskImg.rotate(90)
 
 font = ImageFont.truetype("times-ro.ttf", 18)
 
+#Thanks to Nigel Trewartha for pointing me in the right direction with this algorithm.
 def calcXY(lat, lon):
     global mapImgWidth, mapImgHeight
     global issImgWidth, issImgHeight
