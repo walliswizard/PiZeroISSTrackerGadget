@@ -35,7 +35,6 @@ mapImgHeight = mapImg.height
 # ISS Gif file - this is just a pure white square
 #
 issImg = Image.open("iss.gif")
-issImg = issImg.rotate(90)
 issImgWidth = issImg.width
 issImgHeight = issImg.height
 
@@ -43,12 +42,16 @@ issImgHeight = issImg.height
 # The mask which will turn the white iss gif file into an actual image
 #
 issMaskImg = Image.open("iss_mask.gif")
-issMaskImg = issMaskImg.rotate(90)
 
 #
 # Font for text at the bottom
 #
 font = ImageFont.truetype("times-ro.ttf", 18)
+
+#
+# URL where all the ISS info comes from
+#
+url = "http://api.open-notify.org/iss-now.json"
 
 
 #
@@ -59,15 +62,14 @@ def calcXY(lat, lon):
     global issImgWidth, issImgHeight
     x = int((mapImgWidth / 360.0) * (180 + lon)) - int(issImg.width / 2)
     y = int((mapImgHeight / 180.0) * (90 - lat)) - int(issImg.height / 2)
-    return x,y
+    return x, y
 
 
 
 while True:
     #
     # Load the current status of the ISS in real-time
-    #
-    url = "http://api.open-notify.org/iss-now.json"
+    #    
     response = urllib.request.urlopen(url)
     result = json.loads(response.read())
 
