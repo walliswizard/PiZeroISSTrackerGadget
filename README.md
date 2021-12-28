@@ -58,7 +58,7 @@ _sudo apt-get install libatlas-base-dev_
 
 **Python Packages**
 
-You'll need to install a number of python packages using "pip":
+You'll need to install a number of python packages using "pip", so ensure that's installed:
 
 _sudo apt install python3-pip_
 
