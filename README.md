@@ -1,5 +1,5 @@
 # PiZeroISSTrackerGadget
-A small Raspberry Pi Zero / Display HAT Mini based gadget to show where the ISS currently is on a small display screen.
+A small "Raspberry Pi Zero" / "Pimoroni Display HAT Mini" based gadget to show where the ISS currently is on a small display screen.
 
 **Hardware**
 
