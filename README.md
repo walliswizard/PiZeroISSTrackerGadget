@@ -17,7 +17,7 @@ https://thepihut.com/products/raspberry-pi-zero-2?variant=41181426942147
 
 additionally you'll need:
 
-3. A micro-SD card with Raspberry OS (Bullseye) Lite installed.  SSH is enabled.
+3. A micro-SD card with something like Raspberry OS (Bullseye) Lite installed.  SSH is enabled.
 
 4. A Micro USB cable and the correct power source.
 
