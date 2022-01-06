@@ -64,11 +64,11 @@ _sudo apt install python3-pip_
 
 Once done, you will need to install a number of pip packages:
 
-_pip3 install displayhatmini_
+_sudo pip3 install displayhatmini_
 
-_pip3 install Pillow_
+_sudo pip3 install Pillow_
 
-_pip3 install numpy_
+_sudo pip3 install numpy_
 
 
 **Source Code**
